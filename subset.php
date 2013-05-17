@@ -22,9 +22,8 @@
 		$sum = 0;
 
 		
-		/*$set = array(1, 9, 5, 3, 8);
-		$needle = 13;*/
-		
+		//$set = array(1, 9, 5, 3, 8);
+		//$needle = 13;
 
 		foreach ($set as $k => $v){
 			$sum += $v;
@@ -78,6 +77,7 @@
 					return $sub;
 				}else{
 					array_shift($workset);
+					if( $needle - $v < 0){ return $sub; }
 					$r = brute_force($workset, $needle - $v);
 					if( $r['found'] ){
 						array_push($r['vals'], $v);
